@@ -1,0 +1,31 @@
+﻿body {
+	color: maroon;
+	margin:25px;
+}
+
+h1 {
+    color: maroon;
+	font-size :50px;
+	padding-top:10px;
+	padding-left:90px;
+	text-align:center;
+}
+
+
+.Align
+{
+    padding-left: 10px;
+	display:flex;
+	justify-content:center;
+}
+
+#btnAfficher{
+	width: 350px;
+	height: 30px;
+    margin-top:10px;
+}
+figure{
+	display:flex;
+	justify-content:center;
+}
+

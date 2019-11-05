@@ -1,0 +1,52 @@
+@charset "UTF-8";
+
+body {background: url(img/fond.jpg) no-repeat center;
+    height: 900px;
+    background-size: cover;
+    font-family: Verdana, sans-serif;
+    font-weight: lighter;
+}
+
+header{
+	display:flex;
+	flex-flow: column nowrap;
+    justify-content: center ;
+    margin-top :2%;
+
+}
+h1{
+    text-align:center;
+	font-size:44px;
+    color: white;
+    text-shadow: 5px 5px 8px #FF0000;
+}
+
+h2 {text-align:center;}
+
+figure{
+    display:flex;
+    flex-flow: row nowrap;
+    justify-content: center ;
+}
+
+#imageChoix img{
+  padding-right: 30px;
+}
+section{
+    display:flex;
+    justify-content: center ;
+}
+div{
+    display:flex;
+    flex-flow: row nowrap;
+    justify-content: center ;
+
+}
+div label
+{
+    font-weight:bold;
+
+}
+
+
+

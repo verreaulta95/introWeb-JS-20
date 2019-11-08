@@ -1,0 +1,29 @@
+<!-- Atelier 4 -->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Atelier sur les activations</title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<h1>Atelier sur les activations</h1>
+	<!-- Case à IMAGE -->
+	<div class="align">
+		<input class="imageHero" type="image" id="imgHero1" src="images/super-hero1.jpg" onclick="Hero_onclick(1)" >
+		<input class="imageHero" type="image" id="imgHero2" src="images/super-hero2.jpg" onclick="Hero_onclick(2)" >
+		<input class="imageHero" type="image" id="imgHero3" src="images/super-hero3.jpg" onclick="Hero_onclick(3)" >
+		<input class="imageHero" type="image" id="imgHero4" src="images/super-hero4.jpg" onclick="Hero_onclick(4)" >
+	</div>
+	<div id="divBouton" class="align">
+		<input class="bouton" type="button" id="btnDesact" value="désactiver" >
+		<input class="bouton" type="button" id="btnAct" value="activer" >
+		<input class="bouton" type="button" id="btnMettreImages" value="mettre la même image">
+	</div>
+	<!-- Image de base HERO  -->
+	<figure>
+		<img  id="imgHero" name="imgHero" >
+	</figure>
+	<script src="JS/script.js"></script>
+</body>
+</html>

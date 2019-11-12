@@ -3,7 +3,7 @@ imageHero = 0;
 function Hero_onclick(NoImage)
 {
   document.querySelector("#imgHero").src = "images/super-hero"+NoImage+".jpg" ;
-  imageHero = document.querySelector("#imgHero").src = "images/super-hero"+NoImage+".jpg" ;
+  imageHero = document.querySelector("#imgHero"+NoImage).disabled =true ;
 }
 
 function hero_onclickDisable()

@@ -1,34 +1,63 @@
-var pointJoueur, pointIA,noOrdi,imagePrise;
-pointIA = 0;
-pointJoueur =0;
+var cpt;
+cpt = 0;
 
-function clickImageBird_onclick(noImage)
+
+function imageOnclick(noCarte)
 {
-   document.querySelector("#imgBirdJoueur").src="img/angry-bird"+noImage+".png";
-    imagePrise = noImage;
-    traiteChoixOrd();
-    calculerPoints();
+    AfficherCarte(noCarte);
+
+    document.querySelector("#btnCarte"+noCarte).disabled =true ;
+
+    if(cpt === 2)
+    {
+        DesactiverTout();
+        document.querySelector("#btnContinuer").disabled =false ;
+    }
 }
 
-function traiteChoixOrd()
+function AfficherCarte(noCarte)
 {
-    noOrdi = Math.floor(Math.random()*3+1);
-    document.querySelector("#imgBirdOrdi").src="img/angry-bird"+noOrdi+".png";
+    var couleurCarte,valeurCarte;
+
+    valeurCarte  = Math.floor(Math.random()*9);
+    couleurCarte = Math.floor(Math.random()*4+1);
+
+    document.querySelector("#btnCarte"+noCarte).disabled = true ;
+
+    switch(couleurCarte)
+    {
+        case 1 : couleurCarte="bleu";  break;
+        case 2 : couleurCarte="rouge";  break;
+        case 3 : couleurCarte="jaune";  break;
+        case 4 : couleurCarte="vert";  break;
+
+    }
+    cpt++;
+    document.querySelector("#btnCarte"+noCarte).src="img/"+valeurCarte+couleurCarte+".png";
+}
+
+function DesactiverTout()
+{
+
+    for(var i =1; i< 6; i++)
+    {
+        document.querySelector("#btnCarte"+i).disabled = true;
+    }
 }
 
 
-function calculerPoints()
+// ------------------------ PARTIE 2 ------------------------------ //
+
+function btnContinuer()
 {
+    btnContinuerOnClick();
+}
 
-    if(imagePrise === noOrdi)
+function btnContinuerOnClick()
+{
+    alert("ok");
+    for(var i = 0; i < 6; i++)
     {
-        pointJoueur = pointJoueur+10;
+        document.querySelector("#btnCarte"+i).src="img/dosUno.png";
     }
-    else
-    {
-        pointIA = pointIA + 10;
-    }
-
-    document.querySelector("#lblResultatJoueur").innerHTML = pointJoueur;
-    document.querySelector("#lblResultatOrdi").innerHTML = pointIA ;
 }

@@ -10,20 +10,15 @@
 <h1>JEU</h1>
 <section id="main">
 	<!-- Boutons à cliquer - 5 cartes -->
-	<input class="carte" id="btnCarte1" src="img\dosUno.png"
-		   type="image" name="btnCarte1">
-	<input class="carte" id="btnCarte2" src="img\dosUno.png"
-		   type="image" name="btnCarte2">
-	<input class="carte" id="btnCarte3" src="img\dosUno.png"
-		   type="image" name="btnCarte3">
-	<input class="carte" id="btnCarte4" src="img\dosUno.png"
-		   type="image" name="btnCarte4">
-	<input class="carte" id="btnCarte5" src="img\dosUno.png"
-		   type="image" name="btnCarte5">
+	<input class="carte" id="btnCarte1" src="img\dosUno.png" type="image" name="btnCarte1" onclick="imageOnclick(1)">
+	<input class="carte" id="btnCarte2" src="img\dosUno.png" type="image" name="btnCarte2" onclick="imageOnclick(2)">
+	<input class="carte" id="btnCarte3" src="img\dosUno.png" type="image" name="btnCarte3" onclick="imageOnclick(3)">
+	<input class="carte" id="btnCarte4" src="img\dosUno.png" type="image" name="btnCarte4" onclick="imageOnclick(4)">
+	<input class="carte" id="btnCarte5" src="img\dosUno.png" type="image" name="btnCarte5" onclick="imageOnclick(5)">
 </section>
 <!-- Bouton Continuer -->
 <div id="bouton">
-	<input src="img\btnContinuer.png" type="image" id="btnContinuer" name="btnContinuer" disabled>
+	<input src="img\btnContinuer.png" type="image" id="btnContinuer" name="btnContinuer" disabled onclick="btnContinuer()">
 </div>
 <!-- etiquettes pour affichage des points du joueur-->
 <div id="aff">

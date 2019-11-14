@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="utf-8">
+	<title>Questionnaire</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <div><label>Entrez le nom:</label><input id="txtNom"></div>
+    <div><label>Sexe: F<input type="radio" name="radChoix" id="radFem"  checked></label>
+    <label>M<input type="radio" name="radChoix" id="radMasc" ></label> </div>
+    <div> <label >Question #1:</label>
+		<select id="lstQts1">
+			<option value="A" >Réponse A</option>
+			<option value="B" >Réponse B</option>
+			<option value="C" >Réponse C</option>
+		</select> 
+	</div>
+	<div> <label >Question #2: </label>
+		<select id="lstQts2">
+			<option value="A" >Réponse A</option>
+			<option value="B" >Réponse B</option>
+			<option value="C" >Réponse C</option>
+		</select> 
+	</div>
+	<div> <label >Question #3: </label>
+		<select id="lstQts3">
+			<option value="A" >Réponse A</option>
+			<option value="B" >Réponse B</option>
+			<option value="C" >Réponse C</option>
+		</select> 
+	</div>
+	<div> <label >Question #4:</label>
+		<select id="lstQts3">
+			<option value="A" >Réponse A</option>
+			<option value="B" >Réponse B</option>
+			<option value="C" >Réponse C</option>
+		</select> 
+	</div>
+	<div> <label >Question #5:</label>
+		<select id="lstQts5">
+			<option value="A" >Réponse A</option>
+			<option value="B" >Réponse B</option>
+			<option value="C" >Réponse C</option>
+		</select> 
+	</div>
+ <div> <button id="btnCorriger" name="btnCorriger" type="button" onclick="btnCorriger_onclick()">Corriger</button> </div>
+ <div>Réponse: <label id="lblReponse" ></label></div>
+</body>
+
+</html>

@@ -16,6 +16,7 @@ function imageOnclick(noCarte)
         DesactiverTout();
         document.querySelector("#btnContinuer").disabled = false ;
         cpt = 0;
+        CalculationPoint();
     }
     else
     {
@@ -46,7 +47,7 @@ function AfficherCarte(noCarte)
 
 }
 
-function DesactiverTout(noCarte)
+function DesactiverTout()
 {
 
     for(var i =1; i< 6; i++)
@@ -61,12 +62,11 @@ function DesactiverTout(noCarte)
 
 function btnContinuer()
 {
-    btnContinuerOnClick();
-    CalculationPoint();
+    RemettreEndos();
     ReactiverCarte();
 }
 
-function btnContinuerOnClick()
+function RemettreEndos()
 {
     for(var i = 1; i < 6; i++)
     {
@@ -75,37 +75,47 @@ function btnContinuerOnClick()
 
 }
 
-function ReactiverCarte(noCarte)
+function ReactiverCarte()
 {
+    for(var i = 1; i < 6; i++)
+    {
+        document.querySelector("#btnCarte"+i).disabled = false ;
+    }
 
-    document.querySelector("#btnCarte"+noCarte).disabled = false ;
     AfficherCarte();
 
 }
 
 function CalculationPoint()
 {
+
+    var pointageTour =0;
+
     if(valeur1 === valeurCarte && couleurCarte === carte1 )
     {
         pointageTour = 20;
+        pointageTotal = pointageTotal + pointageTour;
     }
     else
     {
         if(valeur1 === valeurCarte)
         {
             pointageTour = 10;
+            pointageTotal = pointageTotal + pointageTour;
         }
         else if(couleurCarte === carte1)
         {
             pointageTour=5;
+            pointageTotal = pointageTotal + pointageTour;
         }
         else
         {
             pointageTour=0;
+            pointageTotal = pointageTotal + pointageTour;
         }
     }
 
     document.querySelector("#lblPtsTour").innerHTML = pointageTour;
     document.querySelector("#lblPtsTot").innerHTML = pointageTotal;
-    pointageTotal = pointageTotal + pointageTour;
+
 }

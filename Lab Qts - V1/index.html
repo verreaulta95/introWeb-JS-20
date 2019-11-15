@@ -10,42 +10,43 @@
     <div><label>Sexe: F<input type="radio" name="radChoix" id="radFem"  checked></label>
     <label>M<input type="radio" name="radChoix" id="radMasc" ></label> </div>
     <div> <label >Question #1:</label>
-		<select id="lstQts1">
+		<select id="lstQts1" onchange="listQts_onchange(1)">
 			<option value="A" >Réponse A</option>
 			<option value="B" >Réponse B</option>
 			<option value="C" >Réponse C</option>
 		</select> 
 	</div>
 	<div> <label >Question #2: </label>
-		<select id="lstQts2">
+		<select id="lstQts2" onchange="listQts_onchange(2)">
 			<option value="A" >Réponse A</option>
 			<option value="B" >Réponse B</option>
 			<option value="C" >Réponse C</option>
 		</select> 
 	</div>
 	<div> <label >Question #3: </label>
-		<select id="lstQts3">
+		<select id="lstQts3" onchange="listQts_onchange(3)">
 			<option value="A" >Réponse A</option>
 			<option value="B" >Réponse B</option>
 			<option value="C" >Réponse C</option>
 		</select> 
 	</div>
 	<div> <label >Question #4:</label>
-		<select id="lstQts3">
+		<select id="lstQts4" onchange="listQts_onchange(4)">
 			<option value="A" >Réponse A</option>
 			<option value="B" >Réponse B</option>
 			<option value="C" >Réponse C</option>
 		</select> 
 	</div>
 	<div> <label >Question #5:</label>
-		<select id="lstQts5">
+		<select id="lstQts5" onchange="listQts_onchange(5)">
 			<option value="A" >Réponse A</option>
 			<option value="B" >Réponse B</option>
 			<option value="C" >Réponse C</option>
 		</select> 
 	</div>
  <div> <button id="btnCorriger" name="btnCorriger" type="button" onclick="btnCorriger_onclick()">Corriger</button> </div>
- <div>Réponse: <label id="lblReponse" ></label></div>
+ <div>Réponse: <label id="lblReponse" onclick="AfficherReponse_onclick()"></label></div>
+<script src="JS/traitement.js"></script>
 </body>
 
 </html>

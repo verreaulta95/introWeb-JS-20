@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="utf-8">
+	<title>Objet</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <h1>Exercice 1</h1>
+	<button onclick="ExerciceGarage_onclick()">Exercice Garage</button>
+	<label id="lblRes1"> Écrire le résultat ici </label> </br></br>
+	<h1>Exercice 2</h1>
+		<h1 id="MsgNbreJoueur">Joueur</h1>
+		<form>		
+		<div>
+		     <label>Entrez le nom du joueur:</label><input id="txtNom"> 
+		     <button id="btnRechercher" name="btnRechercher" type="button" onclick="btnRechercher_onclick()">Rechercher</button> 
+		</div>
+		<div><label>Entrez l'âge du joueur:</label><input class="nombre" id="txtAge">  </div>
+		<div><label>Entrez les points obtenus:</label><input id="txtPoints" class="nombre" value="0">  </div>
+		<div> <button id="btnAjouter" name="btnAjouter" type="button" onclick="btnAjouter_onclick()">Ajouter</button> 
+			 <button id="btnTrouverMoy" name="btnTrouverMoy" type="button"  disabled onclick="btnTrouverMoy_onclick()">Moyenne</button> 
+			 <button id="btnTrouverMeilleur" name="btnTrouverMeilleur" type="button"  disabled onclick="btnTrouverMeilleur_onclick()">Meilleur Pointage</button>
+		</div>
+		<label id="lblReponse">Réponse</label>
+		</form> 
+<script src="JS/script.js"></script>
+<script src="JS/garage.js"></script>
+</body>
+ 
+</html>

@@ -1,0 +1,23 @@
+body {
+	background-color:  #cce6ff;
+}
+
+
+div{
+	display:flex;
+}
+label{
+	width: 200px;
+	font-weight: bold;
+}
+input{
+	width: 300px;
+}
+.nombre{
+	width: 30px;
+}
+button{
+	width:170px;
+	height:25px;
+
+}

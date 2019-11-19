@@ -5,8 +5,6 @@ var reponse,pointageReponse =0;
 function listQts_onchange(noReponse)
 {
     tabReponse[noReponse-1] = document.querySelector("#lstQts"+noReponse).value;
-    calculPointage();
-    AfficherReponse();
 }
 
 function sexeUtilisateur()
@@ -26,7 +24,7 @@ function btnCorriger_onclick()
 {
     for(var i =0; i < tabBonneReponse.length; i++)
     {
-        if(reponse === tabBonneReponse[i])
+        if(tabReponse[i] === tabBonneReponse[i])
         {
             pointageReponse += 20;
         }
@@ -35,13 +33,15 @@ function btnCorriger_onclick()
             pointageReponse = pointageReponse + 0;
         }
     }
+
+    sexeUtilisateur();
+    AfficherReponse_onclick();
 }
 
 function AfficherReponse_onclick()
 {
-    sexeUtilisateur();
     nomUtilisateur = document.querySelector("#txtNom").value;
-    reponse = "Bravo"+sexe+nomUtilisateur+" vous avez obtenu"+pointageReponse/100;
+    reponse = " Bravo"+sexe+nomUtilisateur+" vous avez obtenu "+pointageReponse+"/100";
     document.querySelector("#lblReponse").innerHTML = reponse;
 }
 

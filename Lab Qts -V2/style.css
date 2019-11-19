@@ -1,0 +1,13 @@
+
+div{
+	margin-top: 20px;
+	display:flex;
+}
+
+label{
+	width: 100px;
+}
+
+#lblReponse{
+	width: 200px;
+}

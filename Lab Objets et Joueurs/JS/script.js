@@ -1,10 +1,10 @@
 var tabJoueur = new Array(5);
 var cpt =0;
 
-function Joueur(Prenom,Nom,Point)
+function Joueur(Prenom,Age,Point)
 {
     this.Prenom = Prenom;
-    this.Nom = Nom;
+    this.Age = Age;
     this.Point = Point;
 }
 
@@ -12,13 +12,8 @@ function ajouterJoueur()
 {
     var nom = document.querySelector("#txtNom").value;
     var age = document.querySelector("#txtAge").value;
-    var point = document.querySelector("#txtPoints").value;
+    var point = parseInt(document.querySelector("#txtPoints").value);
     tabJoueur[cpt] = new Joueur(nom,age,point);
-
-    for(var i =0; i < tabJoueur.length; i++ )
-    {
-        tabJoueur[i] = Joueur;
-    }
 
 }
 
@@ -29,8 +24,10 @@ function btnAjouter_onclick()
 
     if(cpt >= 5)
     {
-        document.querySelector("#btnTrouverMoy").disabled = true;
-        document.querySelector("#btnTrouverMeilleur").disabled = true;
+        document.querySelector("#btnTrouverMoy").disabled = false;
+        document.querySelector("#btnTrouverMeilleur").disabled = false;
+        document.querySelector("#btnRechercher").disabled = false;
+        document.querySelector("#btnAjouter").disabled = true;
     }
 }
 
@@ -50,38 +47,53 @@ function btnTrouverMoy_onclick()
 
 function btnTrouverMeilleur_onclick()
 {
-    var max = 1;
+    var max = 100;
     var joueurPlusGrand = "";
     for(var i =0; i < tabJoueur.length; i++)
     {
-        if(max < tabJoueur.Point)
+        if(max < tabJoueur[i].Point)
         {
             max = tabJoueur[i].Point;
-            joueurPlusGrand = tabJoueur[i].Nom;
-        }
-
-        if( i > tabJoueur.length)
-        {
-            document.querySelector("#lblReponse").innerHTML = "Le joueur ayant le plus de point : "+ max + " est " + joueurPlusGrand;
+            joueurPlusGrand = tabJoueur[i].Prenom;
         }
     }
-
+    document.querySelector("#lblReponse").innerHTML = "Le joueur ayant le plus de point : "+ max + " est " + joueurPlusGrand;
 }
 
 
 function btnRechercher_onclick()
 {
     var cptJoueur = 0;
-    while(cptJoueur < 5)
+    var trouver = false;
+    var nomJoueur = "";
+    var ageJoueur = 0;
+    var pointJoueur =0;
+
+    while((cptJoueur <= 5) &&  (trouver === false))
     {
-        if(document.querySelector("#txtNom").value === tabJoueur[i].Nom)
+        if(tabJoueur[cptJoueur].Prenom  === document.querySelector("#txtNom").value)
         {
-            document.querySelector("#txtPoints").innerHTML = tabJoueur[i].Point;
-            //mettre age mais je trouve pas (peut etre mon constructeur mal concu)
+            nomJoueur = tabJoueur[cptJoueur].Prenom;
+            ageJoueur = tabJoueur[cptJoueur].Age;
+            pointJoueur = tabJoueur[cptJoueur].Point;
+            trouver = true;
         }
         else
         {
             cptJoueur++;
         }
     }
+
+    if(trouver === false)
+    {
+        alert("La personne rechercher n'existe pas.");
+    }
+
+    if(trouver === true)
+    {
+        prompt("La personne est : " +nomJoueur +" et a " + ageJoueur + " a marquer : " + pointJoueur );
+        document.querySelector("#txtAge").innerHTML = ageJoueur;
+        document.querySelector("#txtPoints").innerHTML = pointJoueur;
+    }
+
 }

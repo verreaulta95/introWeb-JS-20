@@ -2,7 +2,7 @@
 //----------------------------------------------------------------------------------//
 function btnValider_onclick()
 {   var message;
-	if (validerTel(document.querySelector("#txtValidation").value ) === true)
+	if (validerCar(document.querySelector("#txtValidation").value ) === true)
 	   message ="bon";
 	else
 	   message ="pas bon";
@@ -42,5 +42,5 @@ function verifierEntreUnVingt( Chaine )//un chiffre entre 1 et 20
 
 function validerCar( Chaine ) // des chaînes de caractères alphabétiques majuscule et minuscule et accepte le trait d'union pas obligatoire
 {
-    return /^[A-z]*-*[A-z]*$/.test(Chaine);
+    return /^([A-z]*[À-é])*[A-z]*(-)?([À-é]*[A-z]?)*$/.test(Chaine);
 }

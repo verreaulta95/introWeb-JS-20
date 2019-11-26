@@ -18,8 +18,6 @@ function hero_onclickDisable()
 
 function hero_onclickActivated()
 {
-
-
     for(var i =1; i < 5; i++)
     {
         document.querySelector("#imgHero"+i).disabled = false;

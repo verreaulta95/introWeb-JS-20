@@ -88,12 +88,11 @@ function btnRechercher_onclick()
     {
         alert("La personne rechercher n'existe pas.");
     }
-
-    if(trouver === true)
+    else
     {
         prompt("La personne est : " +nomJoueur +" et a " + ageJoueur + " a marquer : " + pointJoueur );
-        document.querySelector("#txtAge").innerHTML = ageJoueur;
-        document.querySelector("#txtPoints").innerHTML = pointJoueur;
+        document.querySelector("#txtAge").value = ageJoueur;
+        document.querySelector("#txtPoints").value = pointJoueur;
     }
 
 }

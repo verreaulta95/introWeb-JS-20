@@ -11,7 +11,6 @@ function valideFormat(no1,no2)
 {
     var valide = true;
 
-
     if (validerNo(document.querySelector("#txtNbre1").value) === false)
     {
         document.querySelector("#txtNbre1").style.backgroundColor = "red";
@@ -45,15 +44,12 @@ function valideFormat(no1,no2)
     }
 
     return valide;
-
 }
-
 
 function validerNo( Chaine )
 {
     return /^\d*$/.test(Chaine);
 }
-
 
 function valideSymbole( Chaine )
 {
@@ -69,7 +65,6 @@ function traiterCalcul()
 
     return document.querySelector("#lblReponse").innerHTML = resultat;
 }
-
 
 function calculer(no1,no2,symbole)
 {

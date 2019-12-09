@@ -1,13 +1,32 @@
-function frmMembre_onclick()
+function frmMembre_onSubmit()
 {
+    var valide = true;
+
     if(validerChampsObligatoire() === true)
     {
         if(valideFormat() === true)
         {
-            btnEnvoyer_confirm();
+            if(confirm("Voulez-vous envoyer votre formulaire d'inscription ") === false)
+            {
+                valide = false;
+            }
+            else
+            {
+                traitePrix();
+            }
+        }
+        else
+        {
+            valide = false;
         }
     }
+    else
+    {
+        alert("Vous devez remplir le formulaire correctement.");
+        valide = false;
+    }
 
+    return valide;
 }
 function validerChampsObligatoire()
 {
@@ -33,17 +52,6 @@ function validerChampsObligatoire()
     return valide;
 }
 
-function btnEnvoyer_confirm()
-{
-
-    if (confirm("Voulez vous continuer") === false)
-    {
-        alert("envoyer");
-        traitePrix();
-    }
-
-
-}
 
 function traitePrix()
 {
@@ -52,11 +60,11 @@ function traitePrix()
 
 	switch(document.querySelector("#type").value)
     {
-        case "adulte" : prix = 90; alert(prix); break;
+        case "adulte" : prix = 90; break;
         case "étudiant" : prix = 60; break;
         case "retraité" : prix = 80; break;
-        default :
     }
 
+    return document.querySelector("#lblMessageErreur").innerHTML =  "Votre prix sera de : " + prix + " $";
 
 }

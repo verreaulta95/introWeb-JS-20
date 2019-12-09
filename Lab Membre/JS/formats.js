@@ -1,6 +1,6 @@
 function valideFormat()
 {
-    var valide = false;
+    var valide = true;
 
     //Nom
     if (ValideCaractere(document.querySelector("#txtNom").value) === false)
@@ -38,7 +38,7 @@ function valideFormat()
     }
 
     //Code Postale
-    if (valideCodePostal(document.querySelector("#txtCodePostal").value) === false)
+    if (valideCodePostal(document.querySelector("#txtCodePostal").value) === false && document.querySelector("#txtCodePostal").value != "")
     {
         document.querySelector("#txtCodePostal").style.backgroundColor = "red";
         valide = false;
@@ -60,7 +60,7 @@ function valideFormat()
     }
 
     //code permanent
-    if (ValideCodePerm(document.querySelector("#txtCodePerm").value) === false)
+    if (ValideCodePerm(document.querySelector("#txtCodePerm").value) === false && document.querySelector("#txtCodePerm").value != "")
     {
         document.querySelector("#txtCodePerm").style.backgroundColor = "red";
         valide = false;

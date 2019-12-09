@@ -38,7 +38,7 @@
 				<!--fin Nav-->
 				<h1>Entrez les informations du membre</h1>
 				<!--boîte de texte-->
-				<form id="frmMembre">
+				<form id="frmMembre" method="get" action="Reponse.html" onsubmit=" return frmMembre_onSubmit()">
 					<label id="lblMessageErreur"></label>
 					<div><label>Nom<span>*</span></label><input type="text" class="Obligatoire" id="txtNom" name="txtNom"  size="40" value=""></div>
 					<div><label>Prénom<span>*</span></label><input type="text" class="Obligatoire" id="txtPrenom" name="txtPrenom" size="40" value=""></div>
@@ -52,7 +52,7 @@
 						<option value="étudiant">étudiant</option>
 						<option value="retraité">retraité</option>
 					</select>
-					<div id="Boutons"><input class="bouton" value="Envoyer" id="btnEnvoyer" type="button" onclick="frmMembre_onclick()" src="Reponse.html" />   <input class="bouton" type="reset" value="Réintialiser"/></div>
+					<div id="Boutons"><input class="bouton" value="Envoyer" id="btnEnvoyer" type="submit" />   <input class="bouton" type="reset" onclick="return confirm('Voulez-vous envoyer votre formulaire d inscription')" value="Réintialiser"/></div>
 				</form>
 				<!--ligne de séparation-->
 				<hr>
